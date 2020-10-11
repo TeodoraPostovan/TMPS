@@ -1,16 +1,16 @@
 
 ## Topic: Creational Design Patterns
 ### **Author: Postovan Teodora**
-###Main tasks :
+### Main tasks :
 1. Choose an OO programming language and a suitable IDE or Editor (No frameworks/libs/engines allowed);
 2. Select a domain area for the sample project;
 3. Define the main involved classes and think about what instantiation mechanisms are needed;
 4. Based on the previous point, implement atleast 3 creational design patterns in your project;
-###Used Design Patterns:
+### Used Design Patterns:
 * Factory Method
 * Abstract Factory 
 * Prototype
-###Explanation
+### Explanation
 **Domain area** - Create a Meal. 
 In this project will be a factory named MealFactory  which will be build from different food components: desserts, drinks, salads, hamburgers.    
 
