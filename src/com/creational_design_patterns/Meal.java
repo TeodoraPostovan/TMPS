@@ -9,7 +9,7 @@ import com.creational_design_patterns.Hamburgers.ClassicBurger;
 import com.creational_design_patterns.Factories.MealFactory;
 import com.creational_design_patterns.Factories.VegetarianMealFactory;
 import com.creational_design_patterns.Factories.ClassicMealFactory;
-
+import com.structural_design_patterns.bridge.*;
 
 public class Meal {
     private static Desserts dessert;
