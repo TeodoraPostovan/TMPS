@@ -7,5 +7,8 @@ public abstract class Place {
         this.placeType = placeType;
     }
 
+    public Place () {
+
+    }
     abstract public void arrange();
 }

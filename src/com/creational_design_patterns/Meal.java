@@ -9,17 +9,38 @@ import com.creational_design_patterns.Hamburgers.ClassicBurger;
 import com.creational_design_patterns.Factories.MealFactory;
 import com.creational_design_patterns.Factories.VegetarianMealFactory;
 import com.creational_design_patterns.Factories.ClassicMealFactory;
+import com.behavioral_design_patterns.mediator.Mediator.MealStatus;
+import com.behavioral_design_patterns.mediator.Mediator;
 import com.structural_design_patterns.bridge.*;
+
+import javax.management.modelmbean.ModelMBean;
 
 public class Meal {
     private static Desserts dessert;
     private static Drinks drink;
     private static Salad salad;
 
+    public MealStatus status;
+    Mediator mediator = null;
+    public String name;
+
+
     public Meal(MealFactory mealFactory) {
         dessert = mealFactory.addDessert();
         drink = mealFactory.addDrink();
         salad = mealFactory.addSalad();
+    }
+
+    public Meal(Mediator mediator, String orderName) {
+        status = MealStatus.NOT_CHECKED;
+        name = orderName;
+        this.mediator = mediator;
+    }
+
+    public Meal (MealStatus status, Mediator mediator, String orderName) {
+        this.status = status;
+        name = orderName;
+        this.mediator = mediator;
     }
 
     public static void buildMeal(){
@@ -89,4 +110,12 @@ public class Meal {
         return meal;
     }
 
+    public void checkMeal () {
+        mediator.checkMeal(this);
+        System.out.println("Meal ingredients are checked and added the necessary one");
+    }
+
+    public void add(){
+        mediator.add(this);
+    }
 }
